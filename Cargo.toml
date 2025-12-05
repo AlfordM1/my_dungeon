@@ -2,5 +2,29 @@
 name = "my_dungeon"
 version = "0.1.0"
 edition = "2024"
+build = "build.rs"
+description = "More Advanced Rust Test"
+authors = ["Alford Miller"]
+
+#Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+lto = "thin"
 
 [dependencies]
+bevy = "0.16.1"
+winresource = "0.1"
+
+[build-dependencies]
+winresource = "0.1"
+
+[package.metadata.winresource]
+LegalCopyright = "Copyright 2024 @ Herbert Wolverson (Modified by Alford Miller)"
+OriginalFilename = "my_dungeon.exe"
+langID = "0x0409"
+
